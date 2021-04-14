@@ -29,7 +29,10 @@ function shadeText() {
 			}
 			let long = changedTextArray[i].length == longestSentence.length ? changedText : originalText;
 			//long.innerHTML += "<span style='background-color:pink'>";
-			for(let j = shortestSentence.length; j < longestSentence.length; j++) long.innerHTML += "<span style='background-color:pink'>" + longestSentence[j] + " </span>";
+			for(let j = shortestSentence.length; j < longestSentence.length; j++){
+				if(long == changedText) long.innerHTML += "<span style='background-color:pink'>" + longestSentence[j] + " </span>";
+				else long.innerHTML += "<span style='background-color:powderblue'>" + longestSentence[j] + " </span>";
+			}
 			//long.innerHTML += "</span>";
 			//changedText.innerHTML += "</div><br>";
 			//originalText.innerHTML += "</div><br>";
