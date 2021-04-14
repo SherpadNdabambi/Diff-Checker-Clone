@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+	
+	<title>Input Window - Diff Checker Clone</title>
+	<link rel="stylesheet" type="text/css" href="files/css/styles.css">
+
+</head>
+
+<body onload="onPageLoad()">
+
+	<table>
+		<tr>
+			<td><label for="changedText">Changed Text</label></td>
+			<td><label for="originalText">Original Text</label></td>
+		</tr>
+		<tr>
+			<td><textarea id="changedText" oninput="resizeTextAreas()"></textarea></td>
+			<td><textarea id="originalText" oninput="resizeTextAreas()"></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="2"><button onclick="checkDifference()">Check Difference</button></td>
+		</tr>
+	</table>
+	<div id="result"></div>
+
+	<script type="text/javascript" src="files/js/input.js"></script>
+	
+
+</body>
