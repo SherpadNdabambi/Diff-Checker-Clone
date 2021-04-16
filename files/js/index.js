@@ -1,4 +1,16 @@
 function onPageLoad() {
+	//populate changed text
+	let changedTextArray = localStorage.getItem("changedText").split(/\r?\n/);
+	document.getElementById("changedText").innerHTML = '';
+	for(let i = 0; i < changedTextArray.length; i++) document.getElementById("changedText").innerHTML += changedTextArray[i] + "\n";
+
+	//populate original text
+	let originalTextArray = localStorage.getItem("originalText").split(/\r?\n/);
+	document.getElementById("originalText").innerHTML = '';
+	for(let i = 0; i < originalTextArray.length; i++) document.getElementById("originalText").innerHTML += originalTextArray[i] + "\n";
+
+	resizeTextAreas();
+
 	window.open("display.html", "displayWindow");
 }
 
