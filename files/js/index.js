@@ -1,4 +1,8 @@
 function onPageLoad() {
+	//check local storage. Set to default text if empty
+	if(!localStorage.getItem("changedText")) localStorage.setItem("changedText", "some changed text");
+	if(!localStorage.getItem("originalText")) localStorage.setItem("originalText", "some original text");
+
 	//populate changed text
 	let changedTextArray = localStorage.getItem("changedText").split(/\r?\n/);
 	document.getElementById("changedText").innerHTML = '';
