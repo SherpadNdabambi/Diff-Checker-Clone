@@ -15,7 +15,11 @@ function onPageLoad() {
 
 	resizeTextAreas();
 
-	window.open("display.html", "displayWindow");
+	displayWindow = window.open("display.html", "displayWindow");
+}
+
+function onPageUnload(){
+	displayWindow.close();
 }
 
 function resizeTextAreas() {
