@@ -1,5 +1,5 @@
 function onPageLoad() {
-	window.open("Display.html", "displayWindow");
+	window.open("display.html", "displayWindow");
 }
 
 function resizeTextAreas() {
@@ -11,5 +11,5 @@ function resizeTextAreas() {
 function checkDifference() {
 	localStorage.setItem("changedText", document.getElementById("changedText").value);
 	localStorage.setItem("originalText", document.getElementById("originalText").value);
-	window.open("Display.html", "displayWindow");
+	window.open("display.html", "displayWindow");
 }
