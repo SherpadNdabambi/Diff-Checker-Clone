@@ -15,7 +15,7 @@ function onPageLoad() {
 
 	resizeTextAreas();
 
-	displayWindow = window.open("display.html", "displayWindow");
+	displayWindow = window.open(window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + "/display.html", "displayWindow");
 }
 
 function onPageUnload(){
@@ -31,5 +31,5 @@ function resizeTextAreas() {
 function checkDifference() {
 	localStorage.setItem("changedText", document.getElementById("changedText").value);
 	localStorage.setItem("originalText", document.getElementById("originalText").value);
-	window.open("display.html", "displayWindow");
+	window.open(window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + "/display.html", "displayWindow");
 }
