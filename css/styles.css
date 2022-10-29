@@ -2,11 +2,39 @@ body {
 	font-family: sans-serif;
 }
 
+.center {
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%);
+}
+
+.center.middle {
+	transform: translate(-50%, -50%);
+}
+
+.container {
+	position: relative;
+}
+
+#copyright {
+	text-align: center;
+}
+
 .displayCell{
 	border: 1px solid black;
 	text-align: left;
 	vertical-align: top;
 	width: 50%;
+}
+
+footer {
+	margin-top: 2rem;
+}
+
+.middle {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 p {

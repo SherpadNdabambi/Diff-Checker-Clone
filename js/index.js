@@ -1,3 +1,7 @@
+$(document).ready(function() {
+    setFooterYear();
+});
+
 function checkDifference() {
 	localStorage.setItem("changedText", document.getElementById("changedText").value);
 	localStorage.setItem("originalText", document.getElementById("originalText").value);
@@ -40,4 +44,9 @@ function resizeTextAreas() {
 
 function round(number) {
     return ((number < 10) ? Math.round(number * 100) / 100 : Math.round(number * 10) / 10);
+}
+
+function setFooterYear() {
+    let date = new Date(), year = date.getFullYear();
+    $("#footerYear").text(year.toString());
 }
