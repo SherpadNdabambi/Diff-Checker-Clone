@@ -1,3 +1,14 @@
+function checkDifference() {
+	localStorage.setItem("changedText", document.getElementById("changedText").value);
+	localStorage.setItem("originalText", document.getElementById("originalText").value);
+	window.open(window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + "/display.html", "displayWindow");
+}
+
+function countWords(input) {
+	let words = input.innerText.split(' ');
+	return words.length;
+}
+
 function onPageLoad() {
 	//check local storage. Set to default text if empty
 	if(!localStorage.getItem("changedText")) localStorage.setItem("changedText", "some changed text");
@@ -14,7 +25,6 @@ function onPageLoad() {
 	for(let i = 0; i < originalTextArray.length; i++) document.getElementById("originalText").innerHTML += originalTextArray[i] + "\n";
 
 	resizeTextAreas();
-
 	displayWindow = window.open(window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + "/display.html", "displayWindow");
 }
 
@@ -28,8 +38,6 @@ function resizeTextAreas() {
 	document.getElementById("originalText").rows = numRows;
 }
 
-function checkDifference() {
-	localStorage.setItem("changedText", document.getElementById("changedText").value);
-	localStorage.setItem("originalText", document.getElementById("originalText").value);
-	window.open(window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) + "/display.html", "displayWindow");
+function round(number) {
+    return ((number < 10) ? Math.round(number * 100) / 100 : Math.round(number * 10) / 10);
 }

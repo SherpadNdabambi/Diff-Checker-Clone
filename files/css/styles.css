@@ -1,8 +1,24 @@
+body {
+	font-family: sans-serif;
+}
+
 .displayCell{
 	border: 1px solid black;
 	text-align: left;
 	vertical-align: top;
 	width: 50%;
+}
+
+p {
+	font-size: 1.1rem;
+}
+
+.percentage::after {
+	content: '%';
+}
+
+#percentageDisplay {
+	font-size: 1.3rem;
 }
 
 table{

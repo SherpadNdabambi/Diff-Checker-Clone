@@ -1,3 +1,6 @@
+// declare global variables
+let changedPercentage, changedWordCount = 0, totalWordCount;
+
 function shadeText() {
 	let changedTextArray = changedText.innerHTML.split("<br>"), originalTextArray = originalText.innerHTML.split("<br>");
 	let shortestText = changedTextArray.length <= originalTextArray.length ? changedTextArray : originalTextArray;
@@ -24,6 +27,7 @@ function shadeText() {
 				else{
 					changedTextString += "<span style='background-color:lightcoral'>" + changedTextArray[i][j] + " </span>";
 					originalTextString += "<span style='background-color:mediumaquamarine'>" + originalTextArray[i][j] + " </span>";
+					changedWordCount++;
 				}
 			}
 			if(changedTextArray[i].length == longestSentence.length){
@@ -60,4 +64,8 @@ function onPageLoad() {
 	for(let i = 0; i < originalTextArray.length; i++) document.getElementById("originalText").innerHTML += originalTextArray[i] + "<br>";
 
 	shadeText();
+	
+	totalWordCount = countWords(originalText);
+	changedPercentage = changedWordCount / totalWordCount * 100;
+	percentageDisplay.innerText = round(changedPercentage);
 }
